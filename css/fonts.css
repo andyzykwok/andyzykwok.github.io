@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: RobotoLight;
+    src: url(../fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: RobotoThin;
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: RobotoCondensedLight;
+    src: url(../fonts/RobotoCondensed-Light.ttf);
+}
+
+@font-face {
+    font-family: RobotoBold;
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: BrushScriptMT;
+    src: url(../fonts/Brush Script MT.ttf);
+}

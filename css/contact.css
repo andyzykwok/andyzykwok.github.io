@@ -1,0 +1,83 @@
+#contact {
+    height: 270px;
+    width: 100%;
+    position: relative;
+    background: rgba(10, 10, 10, 0.9);
+    color: white;
+}
+#contact h3 {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    margin-left: 81px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: black;
+    font-family: RobotoBold;
+}
+#contact h4 {
+    position: absolute;
+    text-transform: uppercase;
+    left: 50%;
+    margin-left: -243px;
+    bottom: 80px;
+    font-size: 18px;
+}
+#contact h5 {
+    position: absolute;
+    text-transform: uppercase;
+    left: 50%;
+    margin-left: 81.5px;
+    top: 64px;
+    color: grey;
+    font-size: 13px;
+}
+#contact p {
+    position: absolute;
+    left: 50%;
+    margin-left: -243px;
+    bottom: 112px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+#point {
+    position: absolute;
+    left: 50%;
+    height: 160px;
+    margin-left: -450px;
+    bottom: 0px;
+}
+#email {
+    position: absolute;
+    right: 50%;
+    bottom: 0px;
+    height: 290px;
+    margin-right: -410px;
+}
+@media screen and (max-width: 820px) {
+    #email {
+        position: absolute;
+        right: 420px;
+        bottom: 0px;
+        height: 230px;
+    }
+    #contact h3 {
+        position: absolute;
+        top: 120px;
+        font-size: 14px;
+        left: auto;
+        right: 61px;
+        text-transform: uppercase;
+        color: black;
+        font-family: RobotoBold;
+    }
+    #contact h5 {
+        position: absolute;
+        text-transform: uppercase;
+        top: 100px;
+        left: auto;
+        right: 134px;
+        color: grey;
+        font-size: 12px;
+    }
+}

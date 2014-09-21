@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Andy Kwok</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/title.css">
+    <link rel="stylesheet" type="text/css" href="css/school.css">
+    <link rel="stylesheet" type="text/css" href="css/experience.css">
+    <link rel="stylesheet" type="text/css" href="css/resume.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <script src="scripts/responsive.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/backgrounds.js"></script>
+    <script type="text/javascript" src="scripts/stickynav.js"></script>
+    <script type="text/javascript" src="scripts/activenav.js"></script>
+    <script type="text/javascript" src="scripts/places.js"></script>
+    <script type="text/javascript" src="scripts/responsive.js"></script>
+    <script src="scripts/smooth-scroll.js"></script>
+</head>
+
+<body>
+    <section id="home">
+    </section>
+
+    <section id="homeContent">
+        <div id="homeText">
+            <h2>Hello!</h2>
+            <h1>I'm Andy Kwok</h1>
+            <div id="location">
+                <img src="images/heart.png" id="heart">
+                <p>I ❤ Traveling
+                    <br>Places I've Been</p>
+                <h6 id="bgLocation">Hong Kong</h6>
+                <a id="arrowUp" href="#">
+                    <img src="images/arrowUp.png">
+                </a>
+                <a id="arrowDown" href="#">
+                    <img src="images/arrowDown.png">
+                </a>
+            </div>
+        </div>
+        <a data-scroll href="#school">
+            <img id="triangle" src="images/triangle.png">
+        </a>
+    </section>
+    <div id="spacer"></div>
+
+    <nav>
+        <h1>Andy Kwok</h1>
+        <a data-scroll href="#contact" id="navContact">Contact</a>
+        <a data-scroll href="#resume" id="navResume">Resume</a> 
+        <a data-scroll href="#experience" id="navExperience">Experience</a>
+        <a data-scroll href="#school" id="navSchool">School</a>
+    </nav>
+
+    <section id="school">
+        <h2>Warrior of Waterloo</h2>
+        <p>I'm currently a Computer Engineering student at the University of Waterloo. Yes, thats means I am filling my head with physics, functions and algorithms. This is my second year in this program. Waterloo has a well implemented co-op system, that I am fortunate to be apart of. Its a great school and you should check it out.</p>
+        <a href="https://uwaterloo.ca" id="WaterlooSeal" target="_blank">
+            <img src="images/WaterlooSeal.png">
+        </a>
+        <a href="https://uwaterloo.ca/engineering/" id="EngSeal" target="_blank">
+            <img src="images/EngSocSeal.png">
+        </a>
+    </section>
+
+    <section id="experience">
+        <h2>Experiences In the Workplace</h2>
+        <div id="atgs" class="job">
+            <a href="#">
+                <img class="icon" src="images/ontLogo.png">
+            </a>
+            <h4 class="org">ontario MINISTRY OF THE ATTORNEY GENERAL</h4>
+            <h5 class="jobTitle">Systems Support Officer</h5>
+            <h6 class="when">summer term 2014</h6>
+        </div>
+
+        <div id="ewb" class="job">
+            <a href="#">
+                <img class="icon" src="images/ewbLogo.png">
+            </a>
+            <h4 class="org">Engineers without Borders</h4>
+            <h5 class="jobTitle">Strategy Team Member</h5>
+            <h6 class="when">Sept. 2013 - Dec. 2013</h6>
+        </div>
+
+        <div id="sms" class="job">
+            <a href="#">
+                <img class="icon" src="images/smsLogo.png">
+            </a>
+            <h4 class="org">spirit of math schools</h4>
+            <h5 class="jobTitle">Assistant Teacher</h5>
+            <h6 class="when">Sept. 2009 - June 2013</h6>
+        </div>
+
+        <div id="stjohns" class="job">
+            <a href="#">
+                <img class="icon" src="images/stjohnsLogo.png">
+            </a>
+            <h4 class="org">sunnybrook hospital, st john's rehab</h4>
+            <h5 class="jobTitle">MEAL TRAY DELIVERY VOLUNTEER</h5>
+            <h6 class="when">summer term 2014</h6>
+        </div>
+        <div id="amos" class="job">
+            <a href="#">
+                <img class="icon" src="images/amosLogo.png">
+            </a>
+            <h4 class="org">AMOS Enterprises Limited</h4>
+            <h5 class="jobTitle">Engineering Intern</h5>
+            <h6 class="when">summer term 2014</h6>
+        </div>
+    </section>
+
+    <section id="resume">
+        <img src="images/resume.png">
+        <h3>My Resume</h3>
+        <h5>Please take a look at my full resume</h5>
+        <a href="Resume.pdf" target="_blank">Download</a>
+        <h6>PDF</h6>
+    </section>
+
+    <section id="contact">
+        <img id="point" src="images/point.png">
+        <p>I'm currently in</p>
+        <h4>waterloo, ON</h4>
+        <div id="overflow">
+            <img id="email" src="images/mail.png">
+        </div> 
+        <h5>Send me an email at</h5>
+        <h3>andy.kwok@uwaterloo.ca</h3>
+    </section>
+
+    <script>
+        smoothScroll.init();
+    </script>
+
+</body>
+
+</html>
