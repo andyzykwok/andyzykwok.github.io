@@ -5,10 +5,10 @@ $(document).ready(function () {
     $("#arrowUp").on("click", function () {
         count = count + 1;
         if (count == 1) {
-            bgPath = "url(../images/hk.jpg)";
+            bgPath = "url(images/hk.jpg)";
             place = "Hong Kong";
         } else if (count == 2) {
-            bgPath = "url(images/japan.jpg)";
+            bgPath = "url(images/tokyo.jpg)";
             place = "Tokyo, JPN";
         } else if (count == 3) {
             bgPath = "url(images/sf.jpg)";
@@ -23,16 +23,16 @@ $(document).ready(function () {
             bgPath = "url(images/beijing.jpg)";
             place = "Beijing, chn";
         } else if (count == 7) {
-            bgPath = "url(images/Taipei.jpg)";
+            bgPath = "url(images/taipei.jpg)";
             place = "Taipei, twn";
         } else if (count == 8) {
-            bgPath = "url(images/Korea.jpg)";
-            place = "Soeul, kor";
+            bgPath = "url(images/seoul.jpg)";
+            place = "Seoul, kor";
         } else if (count == 9) {
-            bgPath = "url(images/London.jpg)";
+            bgPath = "url(images/london.jpg)";
             place = "London, GBR";
         } else if (count == 10) {
-            bgPath = "url(images/Munich.jpg)";
+            bgPath = "url(images/munich.jpg)";
             place = "Munich, deu";
         } else if (count == 11) {
             bgPath = "url(images/phuket.jpg)";
@@ -50,9 +50,9 @@ $(document).ready(function () {
             bgPath = "url(images/jakarta.jpg)";
             place = "Jakarta, idn";
         } else if (count == 16) {
-            bgPath = "url(images/Barcelona.jpg)";
+            bgPath = "url(images/barcelona.jpg)";
             place = "Barcelona, spa";
-        }  else {
+        } else {
             count = 1;
             bgPath = "url(../images/hk.jpg)";
             place = "Hong Kong";
@@ -73,7 +73,7 @@ $(document).ready(function () {
             bgPath = "url(images/hk.jpg)";
             place = "Hong Kong";
         } else if (count == 2) {
-            bgPath = "url(images/japan.jpg)";
+            bgPath = "url(images/tokyo.jpg)";
             place = "Tokyo, JPN";
         } else if (count == 3) {
             bgPath = "url(images/sf.jpg)";
@@ -88,16 +88,16 @@ $(document).ready(function () {
             bgPath = "url(images/beijing.jpg)";
             place = "Beijing, chn";
         } else if (count == 7) {
-            bgPath = "url(images/Taipei.jpg)";
+            bgPath = "url(images/taipei.jpg)";
             place = "Taipei, twn";
         } else if (count == 8) {
-            bgPath = "url(images/Korea.jpg)";
-            place = "Soeul, kor";
+            bgPath = "url(images/seoul.jpg)";
+            place = "Seoul, kor";
         } else if (count == 9) {
-            bgPath = "url(images/London.jpg)";
+            bgPath = "url(images/london.jpg)";
             place = "London, GBR";
         } else if (count == 10) {
-            bgPath = "url(images/Munich.jpg)";
+            bgPath = "url(images/munich.jpg)";
             place = "Munich, deu";
         } else if (count == 11) {
             bgPath = "url(images/phuket.jpg)";
@@ -115,11 +115,11 @@ $(document).ready(function () {
             bgPath = "url(images/jakarta.jpg)";
             place = "Jakarta, idn";
         } else if (count == 16) {
-            bgPath = "url(images/Barcelona.jpg)";
+            bgPath = "url(images/barcelona.jpg)";
             place = "Barcelona, spa";
         } else {
             count = 16;
-            bgPath = "url(images/Barcelona.jpg)";
+            bgPath = "url(images/barcelona.jpg)";
             place = "Barcelona, spa";
         }
         $("#bgLocation").fadeTo(300, 0, function () {
