@@ -8,7 +8,7 @@ body {
 }
 #home {
     background: no-repeat center center fixed;
-    background-image: url(../images/hk.jpg);
+    background-image: url(../images/places/hk.jpg);
     background-size: cover;
     position: fixed;
     width: 100%;
