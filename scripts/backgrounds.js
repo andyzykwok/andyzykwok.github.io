@@ -47,8 +47,8 @@ $(document).ready(function () {
             bgPath = "url(images/places/salzburg.jpg)";
             place = "Salzburg, aut";
         } else if (count == 15) {
-            bgPath = "url(images/places/jakarta.jpg)";
-            place = "Jakarta, idn";
+            bgPath = "url(images/places/kualalumpur.jpg)";
+            place = "Kuala Lumpur, mas";
         } else if (count == 16) {
             bgPath = "url(images/places/barcelona.jpg)";
             place = "Barcelona, spa";
@@ -112,8 +112,8 @@ $(document).ready(function () {
             bgPath = "url(images/places/salzburg.jpg)";
             place = "Salzburg, aut";
         } else if (count == 15) {
-            bgPath = "url(images/places/jakarta.jpg)";
-            place = "Jakarta, idn";
+            bgPath = "url(images/places/kualalumpur.jpg)";
+            place = "Kuala Lumpur, mas";
         } else if (count == 16) {
             bgPath = "url(images/places/barcelona.jpg)";
             place = "Barcelona, spa";
