@@ -1,4 +1,4 @@
 ANDYZYKWOK.ME
 ====================
 
-This my personal website. It is my first project using HTML, CSS and jQuery. Please visit the site!
+This my personal website. It is my first personal project using HTML, CSS and Vanilla Javascript. Please visit my site!
