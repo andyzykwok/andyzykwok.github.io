@@ -3,7 +3,6 @@ function gid(id){
 }
 
 window.onload=function(){
-    alert(window.innerWidth || document.documentElement.clientWidth|| document.body.clientWidth);
     iconslide ();
 
     helloheight ();
