@@ -1,0 +1,333 @@
+body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;}
+.cwidth {width: 980px; margin: 0 auto; text-align: center;}
+.clear {clear: both;}
+
+.generaltext {font-size: 16px; line-height: 1.5;font-family: 'Lato', sans-serif;}
+.generallink, .generallink:link, .generallink:active, .generallink:visited {color: #ffffff; text-decoration: none; border-bottom: 1px dotted #252B35; -webkit-transition: border 0.3s; transition: border 0.3s;} 
+.generallink:hover {border-bottom: 1px dotted #ffffff;}
+
+#window {background: #ffffff;width: 100%; position: relative; overflow: hidden;}
+.window {	
+	-webkit-transition: transform 0.2s ease 0.27s, margin 0.3s, filter 0.5s;
+	-moz-transition: transform 0.2s ease 0.27s, margin 0.3s, filter 0.5s;
+	-o-transition: transform 0.2s ease 0.27s, margin 0.3s, filter 0.5s;
+	-ms-transition: transform 0.2s ease 0.27s, margin 0.3s, filter 0.5s;
+	transition: transform 0.2s ease 0.27s, margin 0.3s, filter 0.5s;
+}
+.windowanimate {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9); 
+	-webkit-filter: blur(4px);
+	-moz-filter: blur(4px);
+	-o-filter: blur(4px);
+	-ms-filter: blur(4px);
+	filter: blur(4px);
+	-webkit-transition: transform 0.2s, margin 0.3s ease 0.18s, filter 0.5s;
+	-moz-transition: transform 0.2s, margin 0.3s ease 0.18s, filter 0.5s;
+	-o-transition: transform 0.2s, margin 0.3s ease 0.18s, filter 0.5s;
+	-ms-transition: transform 0.2s, margin 0.3s ease 0.18s, filter 0.5s;
+	transition: transform 0.2s, margin 0.3s ease 0.18s, filter 0.5s;
+	margin-left: -50%;
+}
+
+#overlayclose {position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: none; z-index: 101;}
+#page {width: 100%; position: relative;}
+#blur {height: 100%; width: 100%; position: absolute; top: 0; left: 0;  }
+
+#mobilemenu {position: fixed; top: 0; right: 0; width: 50%; height: 100%; text-transform: uppercase; font-size: 26px; text-align: center; color: #ffffff;} 
+#mobilemenu .valign {position:relative; top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.mobilelink {padding: 13px 0; margin: 13px 0;cursor: pointer;}
+
+#navbar {background: rgba(53,61,74, 0); overflow: hidden; color: white; z-index: 100; position: fixed; top: 0; left: 0; width: 100%; text-transform: uppercase; padding-top: 50px; -webkit-transition: padding-top 0.6s ease; transition: padding-top 0.6s ease;}
+.navscrolled {padding-top: 0;}
+.navlink {cursor: pointer; text-align: center; float: right; margin: 0 14px; padding-top: 30px; padding-bottom: 26px; position: relative;}
+.navlink .fa {font-size: 32px; display: block; opacity: 0.8; transition: opacity 0.3s; -webkit-transition: opacity: 0.3s; vertical-align: center;}
+.navlabel {position: absolute; bottom: -6px; font-weight: bold; left: 50%; text-align: center; white-space: nowrap; opacity: 0; transition: opacity 0.4s, bottom 0.4s; -webkit-transition: opacity 0.3s, bottom 0.3s; font-size: 14px;}
+.navlink.nl1 .navlabel {margin-left: -31px;}
+.navlink.nl2 .navlabel {margin-left: -51px;}
+.navlink.nl3 .navlabel {margin-left: -31px;}
+.navlink.nl4 .navlabel {margin-left: -62px;}
+.navlink.nl5 .navlabel {margin-left: -35px;}
+.navlink.nlmobile {display: none;}
+.navlink:hover .fa {opacity: 1;}
+.navlink:hover .navlabel {opacity: 1; bottom: 6px;}
+.navlink span {position: relative; left: 50%; top: 20px; font-size: 14px; opacity: 0; transition: opacity 0.8s, top 0.2s; -webkit-transition: opacity 0.8s, top 0.2s;}
+.navlink:hover span {opacity: 1; top: -4px;}
+
+.navlink:hover img {opacity: 1;}
+.navlink a:link {text-decoration: none; color: #ffffff;}
+
+#logo {
+	float: left; opacity: 0; width: 100px; display: block; width: 70px; margin-top: 22px; cursor: pointer;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+#logo:hover {opacity: 1 !important;}
+
+
+#bgimg {
+	background: no-repeat center center; background-image: url(images2/please.png);
+	background-size: cover; width: 100%; 
+}
+
+.sectionicon {margin: 0 auto; font-size: 32px;}
+.sectionicon .fa {display: block;}
+.sectiontitle {padding: 20px 0 30px 0;font-size: 20px;margin: 0 auto; text-transform: uppercase; font-weight: bold;}
+.sectiontext {width: 60%; margin: 0 auto; padding-bottom: 50px;}
+
+.title {text-transform: uppercase; font-size: 40px; margin-bottom: 20px;}
+
+#landing{width: 100%;text-align: center; position: relative;}
+.landingtext {
+	color: white; font-size: 100px; text-transform: uppercase; padding: 16px 0; position: relative; top: 50%; width: 660px; margin: 0 auto;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.landingtext h1 {display: block; }
+
+.landingborders {position: absolute; top: 0;left: 0; width: 100%; height: 100%; overflow: hidden;}
+.landingbordersrelative {position: relative; top: 0; left:0; width: 100%; height: 100%;}
+.landingborder {position: absolute; height: 100%; width: 50%;}
+.lbtop {border-top: 1px solid #ffffff; top: 1px;}
+.lbbottom {border-bottom: 1px solid #ffffff; top: -1px;}
+.lbtop.lbright {left: 50%; margin-left: 84px;}
+.lbtop.lbleft {right: 50%; margin-right: 84px;}
+.lbbottom.lbright {left: 50%; margin-left: 25px;}
+.lbbottom.lbleft {right: 50%; margin-right: 25px;}
+.hello {position: absolute; top: -16px; left: 50%; margin-left: -68px; display: block; width: 136px;}
+#landing .fa-angle-down {
+	display: block; position: absolute; bottom: 20px; left: 50%; color: #ffffff; font-size: 60px; margin-left: -19px; cursor: pointer;
+	-webkit-animation: bounce 1s linear 0s infinite;
+	animation: bounce 1s linear 0s infinite;
+}	
+@keyframes bounce {0% {bottom: 17px;} 50% {bottom: 23px;} 100% {bottom: 17px;}} 
+@-webkit-keyframes bounce {0% {bottom: 17px;} 50% {bottom: 23px;} 100% {bottom: 17px;}} 
+
+
+#iconview {position: absolute; overflow: hidden; left: 50%; bottom: -29px; width: 26px; height: 60px;font-size: 20px; margin-left: -13px;}
+#iconslider {position: relative;}
+#iconslider i {display: block; position: absolute; left: 0; transition: 0.3s; -webkit-transition: 0.3s; opacity: 0; text-align: center; width: 100%;}
+
+#school {padding: 120px 0;}
+
+#experiences {padding-top: 120px; margin-bottom: 50px;}
+#siteslider {float: left; width: 60%; margin-right: 3%; overflow: hidden; position: relative;}
+#slider {position: relative; top: 0; transition: left ease 0.6s; -webkit-transition: left ease 0.6s;}
+#slider a {display: block; float: left;}
+#slider a img {width: 100%; display: block;}
+#latestexp {margin-bottom: 60px;}
+#latestexp .column {float: left; width: 37%; text-align: left; padding-top: 20px;}
+.slide {position: absolute; top: 50%; left: 0; margin-top: -18px; font-size: 36px; color: #cccccc; -webkit-transition: color 0.4s; transition: color 0.4s; cursor: pointer;}
+.slide:hover {color: #353d4a;}
+.slide.right {right: 0; left: auto;}
+#sitelinks {padding-top: 16px;}
+.sitelink:link, .sitelink:visited, .sitelink:active {color: #ffffff; text-decoration: none;} 
+.sitelink {background: #cbcbcb; padding: 6px 10px; float: left; clear: both; display: block; margin: 4px 0; border-radius: 3px; transition: background 0.3s; -webkit-transition: background 0.3s; text-transform: uppercase; font-size: 14px;}
+.sitelink:hover {background: #333333;}
+
+.experience {text-align: center; width: 20%; float: left; position: relative;}
+#clearexp1, #clearexp2, #clearexp3 {display: none;}
+.exppic {width: 70%; margin: 0 auto; height: 100px;}
+.exppic img {position: relative; width: 100%; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%);}
+.exppichover {height: 100px; transition: opacity 0.7s; -webkit-transition: opacity 0.3s; position: absolute; top: 0; margin: 0 auto; left: 0; right: 0; width: 70%; opacity: 0;}
+.exppichover:hover {opacity: 1;}
+.exppichover img {position: relative; width:100%; top: 50%; transform: translateY(-50%); -webkit-transform: translateY(-50%);}
+.exptext {line-height: 1.3; margin-top: 10px;}
+.exptext span {text-transform: uppercase; font-size: 12px; font-family: 'Montserrat', sans-serif;}
+
+#resume {padding-top: 100px; padding-bottom: 50px; color: #ffffff; background: #252B35;}
+
+#moretitle {position: absolute; top: 100px; left: 50%; width: 200px; text-align: center; margin-left: -100px; transition: opacity 0.3s; -webkit-transition: opacity 0.3s;}
+.diagonalbutton {position: relative; height: 300px; transition: background 0.3s; -webkit-transition: background 0.3s; background: #f6f6f6;float: left; width: 50%; -webkit-transform: skew(-25deg); transform: skew(-25deg);}
+#interestbutton {background: #eeeeee;}
+#morebutton {width: 100%; overflow: hidden;}
+#morebutton:hover #moretitle {opacity: 0.4;}
+#morebutton:hover .morebuttontext {opacity: 1;}
+.morebuttontext {transition: opacity 0.3s; -webkit-transition: opacity 0.3s; opacity: 0.4;transform: skew(25deg); -webkit-transform: skew(25deg); text-transform: uppercase; text-align: center;position: absolute; top: 50%; margin-top: -18px;}
+.topbuttontext, .morebutton, .bottombuttontext { transition: all 0.3s; -webkit-transition: all 0.3s;}
+.topbuttontext, .bottombuttontext {text-align: center; font-weight: 300; font-family: 'Lato', sans-serif;}
+.bottombuttontext {opacity: 0;}
+.morebutton {font-size: 18px; font-weight: bold;}
+.buttonbg {transition: background 0.3s; -webkit-transition: background 0.3s; position: absolute; width: 50%; top: 0; height: 100%; transform: skew(25deg); -webkit-transform: skew(25deg);}
+#travelbutton .buttonbg {background: #f6f6f6;}
+#interestbutton .buttonbg {background: #eeeeee;}
+#travelbutton:hover, #interestbutton:hover {color: #ffffff; background: #3F444E; cursor: pointer;}
+.diagonalbutton:hover .morebutton {-webkit-transform: translate(0px, -23px); transform: translate(0px, -23px);}
+.diagonalbutton:hover .topbuttontext {opacity: 0; transform: translate(0px, -23px); -webkit-transform: translate(0px, -23px);}
+.diagonalbutton:hover .bottombuttontext {opacity: 1;  transform: translate(0px, -23px); -webkit-transform: translate(0px, -23px);}
+#travelbutton:hover .buttonbg, #interestbutton:hover .buttonbg {background: #3F444E;}
+.diagonalbutton:hover + #moretitle {opacity: 0;}
+
+#morecontent {overflow: hidden; height: 0; transition: height 0.7s; -webkit-transition: height 0.7s;}
+.tile {float: left; width: 20%; text-align: center;}
+.tile img {display: block; width: 100%; position:relative; opacity: 0; transition: opacity 1s, top 0.5s; -webkit-transition: opacity 1s, top 0.5s;}
+.moremode1 {top: 300px;}
+#contact {padding-top: 120px; padding-bottom: 50px; background: #F9F9F9;}
+
+#travels {background: #353d4a; position: relative; overflow: hidden; height: 0; transition: height 0.25s; -webkit-transition: height 0.25s;}
+#travels_fade {position: absolute; top: 0; left: 0; height: 100%; width: 100%; transition: opacity 0.5s; -webkit-transition: opacity 0.5s;}
+.travels_mask {position: absolute; height: 100%; width: 100%; top: 0; left: 0; background: #2a2b30; opacity: 0.5;}
+#travelscontent {height: 100%;}
+#travel_row {width: 100%; position:relative; height: 100%;}
+.travel_col {float: left;width: 50%; position: relative; font-size: 20px; text-transform: uppercase; line-height: 1.8; font-weight: bold; color: #ffffff; height: 100%;}
+.location_list {
+	position: relative; top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.location {cursor: pointer; transition: letter-spacing 0.3s; -webkit-transition: letter-spacing 0.3s; white-space: nowrap;}
+.location:hover {letter-spacing: 1px;}
+.travel_col b {white-space: nowrap;}
+#map {width: 1920px; height: auto; display: block; position: absolute; opacity: 0.5; top: -160px; left: -112px; transition: 0.5s; -webkit-transition: 0.5s;}
+#map2 {width: 1920px; position: absolute; top: -160px; left: -112px; display: block; opacity: 0.08; transition: 0.5s; -webkit-transition: 0.5s;}
+#mapwindow {position: relative; overflow: hidden;}
+
+
+@keyframes marker {
+	0% {background: blue;}
+	10% {background: #ffffff;}
+	15% {background: blue;}
+
+}
+
+@keyframes ripplesmall {
+	0% {transform: scale (0);}
+	90% {transform: scale (6);}
+} 
+
+@-webkit-keyframes ripplesmall {
+	0% {-webkit-transform: scale (0);}
+	90% {-webkit-transform: scale (6);}
+} 
+
+.marker {position: absolute; top: 50%; left: 50%; width: 30px; margin-top: -41px; margin-left: -15px;}
+.marker img {width: 100%; }
+
+#interests {overflow: hidden; transition: height 0.25s; -webkit-transition: height 0.25s; height: 0;}
+.interest {float:left; margin: 24px 1.333% 24px 0; width: 24%; position: relative;}
+.interest img {width: 100%; display: block;}
+.interest.tile3 {margin-right: 0;}
+.mesh {background: url(images/mesh.png); height: 100%; width: 100%; position: absolute; top: 0; left: 0; transition: opacity 0.3s; -webkit-transition: opacity 0.3s;opacity: 0.3;}
+.interest:hover .mesh {opacity: 1;}
+.mask {position: absolute; height: 100%; width: 100%; top: 0; left: 0; transition: opacity 0.3s; -webkit-transition: opacity 0.3s; background: #333333; opacity: 0.1; transition: opacity 0.3s; -webkit-transition: opacity 0.3s;}
+.interest:hover .mask {opacity: 0.4;}
+.interesttext {position: absolute; top: 80%; width: 90%; left: 5%; color: #ffffff; transition: top 0.3s; -webkit-transition: top 0.3s;}
+.interest:hover .interesttext {top: 50%;}
+.interesttitle {color: #ffffff; text-transform: uppercase; font-size: 24px; font-weight: bold; width: 100%; margin-bottom: 12px;}
+.interestblurb {opacity: 0; transition: opacity 0.3s; -webkit-transition: opacity 0.3s; font-size: 15px;}
+.interest:hover .interestblurb {opacity: 1;}
+
+@media screen and (min-width:50px){
+	.cwidth{width:1240px; margin:0 auto;}
+	.morebuttontext {width: 620px;}
+}
+
+@media screen and (max-width:1280px){
+	.cwidth{width:auto;margin:0 20px;}
+	.morebuttontext {width: 100%;}
+}
+@media screen and (max-width:1140px){
+	.interest:hover .interesttext {top: 30%;}
+}
+@media screen and (max-width: 980px) {
+	.experience {width: 32%; margin-right: 2%; margin-bottom: 50px;}
+	.experience.exp2 {margin-right: 0;}
+	#clearexp2 {display: block;}
+	.exppic, .exppichover {height: 120px;}
+	.interest:hover .interesttext {top: 20%;}
+}
+@media screen and (max-width: 900px) {
+	.interest {width: 48%; margin-right: 4%;}
+	.interest.tile1 {margin-right: 0;}
+	.interest.tile0, .interest.tile1 {margin-bottom: 12px;}
+	.interest.tile2, .interest.tile3 {margin-top: 12px;}
+	.interest:hover .interesttext {top: 60%;}
+}
+@media screen and (max-width: 768px) {
+	.navlink {display: none;}
+	.navlink.nlmobile {display: block;}
+
+	.landingtext {font-size: 80px; width: 100%;}
+
+	#siteslider {margin-right: 0; width: 100%;}
+	#latestexp .column {width: 100%;}
+
+	#moretitle {display: none;} 
+	#mapwindow {position: absolute;}
+	.travel_col {width: 100%;}
+	.marker {display: none;}
+	#map {opacity: 0.16;}
+
+	.interest:hover .interesttext {top: 50%;}
+}
+
+@media screen and (max-width: 720px) {
+	.sectiontext {width: 80%;}
+}
+
+@media screen and (max-width: 690px){
+	.exppic, .exppichover {height: 100px;}
+}
+
+@media screen and (max-width: 600px){
+	.interest:hover .interesttext {top: 50%;}
+}
+
+@media screen and (max-width: 590px){
+	.experience {width: 48%; margin-right: 0; margin-bottom: 40px;}
+	.experience.exp0, .experience.exp2, .experience.exp4 {margin-right: 4%;}
+	#clearexp2 {display: none;}
+	#clearexp1,#clearexp3 {display: block;}
+}
+
+@media screen and (max-width: 580px){
+	.cwidth{margin: 0 10px;}
+
+	.hello {width: 104px; top: -12px; margin-left: -52px;}
+	.landingtext {font-size: 60px;}
+	.interest:hover .interesttext {top: 40%;}
+}
+
+
+@media screen and (max-width: 540px){
+	.sectiontext {width: 90%;}
+	.interest:hover .interesttext {top: 30%;}
+	.interestblurb {line-height: 1.4;}
+}
+
+@media screen and (max-width: 460px) {
+	.interest {width: 100%; margin-right: 0;}
+	.interest:hover .interesttext {top: 65%;}
+
+	.interest.tile0 {margin-top: 24px; margin-bottom: 12px;}
+	.interest.tile3 {margin-bottom: 24px; margin-top: 12px;}
+	.interest.tile1, .interest.tile2 {margin-top: 12px; margin-bottom: 12px;}
+}
+
+@media screen and (max-width: 420px){
+	.landingtext {font-size: 45px;}
+	.interest:hover .interesttext {top: 60%;}
+}
+
+@media screen and (max-width: 400px){
+	.sectiontext {width: 100%;}
+}
+
+@media screen and (max-width: 380px){
+	.experience.exp0, .experience.exp2, .experience.exp4 {margin-right: 0;}
+	.experience {width: 100%;}
+	.exppic, .exppichover {height: 150px;}
+}
+
+@media screen and (max-width: 360px) {
+	.interest:hover .interesttext {top: 55%;}
+}

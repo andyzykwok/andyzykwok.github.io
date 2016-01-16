@@ -3,143 +3,269 @@
 
 <head>
     <title>Andy Kwok</title>
-
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/title.css">
-    <link rel="stylesheet" type="text/css" href="css/school.css">
-    <link rel="stylesheet" type="text/css" href="css/experience.css">
-    <link rel="stylesheet" type="text/css" href="css/resume.css">
-    <link rel="stylesheet" type="text/css" href="css/contact.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
-    <script src="scripts/responsive.js"></script>
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="scripts/backgrounds.js"></script>
-    <script type="text/javascript" src="scripts/stickynav.js"></script>
-    <script type="text/javascript" src="scripts/activenav.js"></script>
-    <script type="text/javascript" src="scripts/places.js"></script>
-    <script type="text/javascript" src="scripts/responsive.js"></script>
-    <script type="text/javascript" src="scripts/autoclick.js"></script>
-    <script src="scripts/smooth-scroll.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-    <section id="home">
-    </section>
+    <div id="mobilemenu">
+        <div class="valign">
+            <div class="mobilelink" onclick="closemobilemenu('school');">School</div>
+            <div class="mobilelink" onclick="closemobilemenu('experiences');">Experiences</div>
+            <div class="mobilelink" onclick="closemobilemenu('resume', gid('navbar').clientHeight);">Resume</div>
+            <div class="mobilelink" onclick="closemobilemenu('morebutton');">More About Me</div>
+            <div class="mobilelink" onclick="closemobilemenu('contact', gid('navbar').clientHeight);">Contact</div>
+        </div>
+    </div>
+    <div id="window" class="window">
+        <div id="page">
+            <div id="navbar">
+                <div class="cwidth">
+                 <div class="navlink nlmobile"><a onclick="openmobilemenu ();"><i class="fa fa-bars"></i></a></div>
+                 <div class="navlink nl5"><a onclick="smoothscroll('contact', gid('navbar').clientHeight);"><i class="fa fa-comments-o"></i><div class="navlabel">Contact</div></a></div>
+                 <div class="navlink nl4"><a onclick="smoothscroll('morebutton', gid('navbar').clientHeight);"><i class="fa fa-user"></i><div class="navlabel">More About Me</div></a></div>
+                 <div class="navlink nl3"><a onclick="smoothscroll('resume', gid('navbar').clientHeight);"><i class="fa fa-file-text-o"></i><div class="navlabel">Resume</div></a></div>
+                 <div class="navlink nl2"><a onclick="smoothscroll('experiences');"><i class="fa fa-briefcase"></i><div class="navlabel">experiences</div></a></div>
+                 <div class="navlink nl1"><a onclick="smoothscroll('school');"><i class="fa fa-graduation-cap"></i><div class="navlabel">school</div></a></div>
+                 <img id="logo" src="images/logo.png" onclick="smoothscroll('landing');">
+                 <div class="clear"></div>
+             </div>
+         </div>
+         <div id="bgimg">
+            <div id="landing">
+                <div class="cwidth" style="height: 100%;">
+                    <div class="landingtext">
+                        <div class="landingborders">
+                            <div class="landingbordersrelative">
+                                <div class="landingborder lbtop lbright"></div>
+                                <div class="landingborder lbtop lbleft"></div>
+                                <div class="landingborder lbbottom lbright"></div>
+                                <div class="landingborder lbbottom lbleft"></div>
+                            </div>
+                        </div>
+                        <img src="images/hello.png" class="hello">
+                        <h1>Andy Kwok</h1>
+                        <div id="iconview">
+                            <div id="iconslider" style="top: -20px;">
+                                <i class="fa fa-car"></i>
+                                <i class="fa fa-headphones"></i>
+                                <i class="fa fa-futbol-o"></i>
+                                <i class="fa fa-gamepad" style="opacity: 1;"></i>
+                                <i class="fa fa-thumbs-o-up"></i>
+                                <i class="fa fa-bicycle"></i>
+                                <i class="fa fa-television"></i>
+                                <i class="fa fa-beer"></i>
+                                <i class="fa fa-paw"></i>
+                            </div>
+                        </div>
+                    </div>  
+                    <i onclick="smoothscroll('school');" class="fa fa-angle-down"></i>
+                </div>    
+            </div>
 
-    <section id="homeContent">
-        <div id="homeText">
-            <h2>Hello!</h2>
-            <h1>I'm Andy Kwok</h1>
-            <div id="location">
-                <img src="images/heart.png" id="heart">
-                <p>I ❤ Traveling
-                    <br>Places I've Been</p>
-                <h6 id="bgLocation">Hong Kong</h6>
-                <a id="arrowUp" href="#">
-                    <img src="images/arrowUp.png">
-                </a>
-                <a id="arrowDown" href="#">
-                    <img src="images/arrowDown.png">
-                </a>
+            <div id="school">
+                <div class="cwidth">
+                    <div class="sectionicon"><i class="fa fa-graduation-cap"></i></div>
+                    <div class="sectiontitle" style="line-height: 1.5;">school<br>I'm a Warrior of waterloo</div>
+                    <div class="sectiontext generaltext">I'm currently a Computer Engineering student at the University of Waterloo. Yes, that means I am filling my head with physics, functions and algorithms. This is my second year in this program. Waterloo has a well implemented co-op system and I am very fortunate to be a part of it.  It's a great school and you should check it out.</div>
+                </div>
+            </div>
+        </div> 
+
+        <div id="experiences">
+            <div class="cwidth">
+                <div class="sectionicon"><i class="fa fa-briefcase"></i></div>
+                <div class="sectiontitle">Experiences</div>
+                <div class="sectiontext generaltext">Some of my co-op, work and volunteer experiences.</div>
+
+                <div id="latestexp">
+                    <div id="siteslider">
+                        <div id="slider" style="left: 0;" onmouseenter="clearInterval(document.slideinterval);" onmouseleave="autoslide();">
+                            <a href="http://www.integrahealthcentre.com/" rel="nofollow" target=_blank><img border="0" src="images/slider/integra.jpg"></a>
+                            <a href="http://can.womeninpayments.org/" rel="nofollow" target=_blank><img border="0" src="images/slider/wip.jpg"></a>
+                            <a href="https://www.nylanguagecenter.com/" rel="nofollow" target=_blank><img border="0" src="images/slider/nylc.jpg"></a>
+                            <a href="http://vaughn.edu" rel="nofollow" target=_blank><img border="0" src="images/slider/vaughn.jpg"></a>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="slide left" onclick="slide(-2);"><i class="fa fa-caret-left"></i></div>
+                        <div class="slide right" onclick="slide(-1);"><i class="fa fa-caret-right"></i></div> 
+                    </div>
+                    <div class="column">
+                        <h2 class="title"><a href="http://www.hubnest.com" target=_blank><img style="width: 172px; display: block;" src="images/work/hubnest.png"></a></h2>
+                        <div class="generaltext">Hubnest is a company that provides creative web development services. I have spent 8 months (2 co-op terms) at Hubnest working as a developer, creating beautiful websites and web applications with PHP, HTML, CSS and JavaScript.<br><br>Below are some of the bigger projects I worked on while at Hubnest:</div>
+                        <div id="sitelinks">
+                            <a href="http://www.integrahealthcentre.com/" target=_blank class="sitelink" onmousemove="slide(1);" style="background: #333333;" rel="nofollow">Integra Health Center</a>
+                            <a href="http://can.womeninpayments.org/" target=_blank class="sitelink" onmousemove="slide(2);" rel="nofollow">Women in Payments</a>
+                            <a href="https://www.nylanguagecenter.com/" target=_blank class="sitelink" onmousemove="slide(3);" rel="nofollow">New York Language Center</a>
+                            <a href="http://vaughn.edu" target=_blank class="sitelink" onmousemove="slide(4);" rel="nofollow">Vaughn College</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div id="otherexp">
+                    <div class="cwidth"><div class="sectiontitle">Other Experiences</div></div>
+                    <div class="experience exp0">
+                        <div class="exppic"><img src="images/work/ontario_grey.png"></div>
+                        <div class="exppichover"><a border="0" href="https://www.attorneygeneral.jus.gov.on.ca/english/family/pgt/" target=_blank rel="nofollow"><img src="images/work/ontario_color.png"></a></div>
+                        <div class="exptext generaltext">Ministry of the Attorney<br>General, OPGT<br><span>Systems Support Officer</span></div>
+                    </div>
+                    <div class="experience exp1">
+                        <div class="exppic"><img src="images/work/ewb_grey.png"></div>
+                        <div class="exppichover"><a border="0" href="http://uwaterloo.ewb.ca/" target=_blank rel="nofollow"><img src="images/work/ewb_color.png"></a></div>
+                        <div class="exptext generaltext">Engineers Without Borders<br><span>Strategy Team Member</span></div>
+                    </div>
+                    <div class="clear" id="clearexp1"></div>
+                    <div class="experience exp2">
+                        <div class="exppic"><img src="images/work/sms_grey.png"></div>
+                        <div class="exppichover"><a border="0" href="https://www.spiritofmath.com/" target=_blank rel="nofollow"><img src="images/work/sms_color.png"></a></div>
+                        <div class="exptext generaltext">Spirit of Math Schools<br><span>Assistant Teacher</span></div>
+                    </div>
+                    <div class="clear" id="clearexp2"></div>
+                    <div class="experience exp3">
+                        <div class="exppic"><img src="images/work/st.johns_grey.png"></div>
+                        <div class="exppichover"><a border="0" href="http://sunnybrook.ca/content/?page=st-johns-rehab" target=_blank rel="nofollow"><img src="images/work/st.johns_color.png"></a></div>
+                        <div class="exptext generaltext">Sunnybrook Hospital,<br>St. Johns Rehab<br><span>Meal Tray Delivery</span></div>
+                    </div>
+                    <div class="clear" id="clearexp3"></div>
+                    <div class="experience exp4">
+                        <div class="exppic"><img src="images/work/amos_grey.jpg"></div>
+                        <div class="exppichover"><a border="0" href="http://www.amos.com.hk/" target=_blank rel="nofollow"><img src="images/work/amos_color.jpg"></a></div>
+                        <div class="exptext generaltext">AMOS Enterprises Ltd.<br><span>Engineering Intern</span></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div><!--cwidth-->
+        </div><!--experiences-->
+
+        <div id="resume">
+            <div class="cwidth">
+                <div class="sectionicon"><i class="fa fa-file-text-o"></i></div>
+                <div class="sectiontitle">Resume</div>
+                <div class="sectiontext generaltext">Check out my full <a target=_blank href="resume.pdf" class="generallink">resume <i class="fa fa-download"></i></a></div>
             </div>
         </div>
-        <a data-scroll href="#school">
-            <img id="triangle" src="images/triangle.png">
-        </a>
-    </section>
-    <div id="spacer"></div>
 
-    <nav>
-        <h1>Andy Kwok</h1>
-        <a data-scroll href="#contact" id="navContact">Contact</a>
-        <a data-scroll href="#resume" id="navResume">Resume</a> 
-        <a data-scroll href="#experience" id="navExperience">Experience</a>
-        <a data-scroll href="#school" id="navSchool">School</a>
-    </nav>
-
-    <section id="school">
-        <h2>Warrior of Waterloo</h2>
-        <p>I'm currently a Computer Engineering student at the University of Waterloo. Yes, that means I am filling my head with physics, functions and algorithms. This is my second year in this program. Waterloo has a well implemented co-op system and I am very fortunate to be a part of it.  It's a great school and you should check it out.</p>
-        <a href="https://uwaterloo.ca" id="WaterlooSeal" target="_blank">
-            <img src="images/WaterlooSeal.png">
-        </a>
-        <a href="https://uwaterloo.ca/engineering/" id="EngSeal" target="_blank">
-            <img src="images/EngSocSeal.png">
-        </a>
-    </section>
-
-    <section id="experience">
-        <h2>Experiences In the Workplace</h2>
-        <div id="atgs" class="job">
-            <a href="#">
-                <img class="icon" src="images/ontLogo.png">
-            </a>
-            <h4 class="org">ontario MINISTRY OF THE ATTORNEY GENERAL</h4>
-            <h5 class="jobTitle">Systems Support Officer</h5>
-            <h6 class="when">summer term 2014</h6>
+        <div id="morebutton" style="position: relative;">
+            <div id="travelbutton" class="diagonalbutton" onclick="more('travels');">
+                <div class="buttonbg" style="left:0;"></div>
+                <div class="morebuttontext" style="right: 0;">
+                    <div class="topbuttontext">My</div>
+                    <div class="morebutton">Travels</div>
+                    <div class="bottombuttontext">Places I've Been</div>
+                </div>
+            </div>
+            <div id="interestbutton" class="diagonalbutton" onclick="more('interests');">
+                <div class="buttonbg" style="right:0;"></div>
+                <div class="morebuttontext" style="left: 0;">
+                    <div class="topbuttontext">My</div>
+                    <div class="morebutton">Interests</div>
+                    <div class="bottombuttontext">Some Things I Love</div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div id="moretitle">
+                <div class="sectionicon"><i class="fa fa-user"></i></div>
+                <div class="sectiontitle">More About Me</div>
+            </div>
         </div>
+        <div id="travels">
+            <div id="travels_fade"></div>
+            <div class="travels_mask"></div>
+            <div id="travelscontent" class="cwidth">
+                <div id="travel_row">
+                    <img src="images/map.png" id="map2">
+                    <div id="mapwindow" class="travel_col">
+                        <img src="images/map.png" id="map">
+                        <div class="marker">
+                            <img src="images/mapmarker.png">
+                        </div>
+                    </div>
+                    <div class="travel_col">
+                        <div class="location_list">
+                            <span class="location" onclick="movemap(243, 338, 'vancouver');">Vancouver</span><b> // </b>
+                            <span class="location" onclick="movemap(525, 370, 'ny');">New York</span><b> // </b>
+                            <span class="location" onclick="movemap(228, 408, 'sf');">San Francisco</span><b> // </b>
+                            <br>
+                            <span class="location" onclick="movemap(1500, 513, 'hk');">Hong Kong</span><b> // </b>
+                            <span class="location" onclick="movemap(1510, 390, 'beijing');">Beijing</span><b> // </b>
+                            <span class="location" onclick="movemap(1555, 448, 'shanghai');">Shanghai</span><b> // </b>
+                            <span class="location" onclick="movemap(1422, 611, 'phuket');">Phuket</span><b> // </b>
+                            <span class="location" onclick="movemap(1465, 665, 'singapore');">Singapore</span><b> // </b>
+                            <span class="location" onclick="movemap(1547, 498, 'taipei');">Taipei</span><b> // </b>
 
-        <div id="ewb" class="job">
-            <a href="#">
-                <img class="icon" src="images/ewbLogo.png">
-            </a>
-            <h4 class="org">Engineers without Borders</h4>
-            <h5 class="jobTitle">Strategy Team Member</h5>
-            <h6 class="when">Sept. 2013 - Dec. 2013</h6>
+                            <span class="location" onclick="movemap(1645, 431, 'tokyo');">Tokyo</span><b> // </b>
+                            <span class="location" onclick="movemap(1580, 416, 'seoul');">Seoul</span><b> // </b>
+                            <br>
+                            <span class="location" onclick="movemap(891, 307, 'london');">London</span><b> // </b>
+                            <span class="location" onclick="movemap(957, 337, 'munich');">Munich</span><b> // </b>
+                            <span class="location" onclick="movemap(961, 339, 'salzburg');">Salzburg</span><b> // </b>
+                            <span class="location" onclick="movemap(916, 332, 'paris');">Paris</span><b> // </b>
+                            <span class="location" onclick="movemap(902, 388, 'barcelona');">Barcelona</span><b> // </b>
+                            <span class="location" onclick="movemap(967, 386, 'rome');">Rome</span><b> // </b>
+                            <span class="location" onclick="movemap(943, 359, 'milan');">Milan</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
         </div>
-
-        <div id="sms" class="job">
-            <a href="#">
-                <img class="icon" src="images/smsLogo.png">
-            </a>
-            <h4 class="org">spirit of math schools</h4>
-            <h5 class="jobTitle">Assistant Teacher</h5>
-            <h6 class="when">Sept. 2009 - June 2013</h6>
+        <div id="interests">
+            <div id="interestscontent" class="cwidth">
+                <div id="soccer" class="interest tile0">
+                    <img src="images/interests/soccer.jpg">
+                    <div class="mask"></div>
+                    <div class="mesh"></div>
+                    <div class="interesttext">
+                        <div class="interesttitle">Soccer</div>
+                        <div class="interestblurb generaltext">Soccer's a huge part of my life. I've played it for over 12 years, everything from competitive leagues to school teams. I also follow it regularly.</div>
+                    </div>
+                </div>
+                <div id="hockey" class="interest tile1">
+                    <img src="images/interests/hockey.jpg">
+                    <div class="mask"></div>
+                    <div class="mesh"></div>
+                    <div class="interesttext">
+                        <div class="interesttitle">Hockey</div>
+                        <div class="interestblurb generaltext">I've played hockey for many years, including a couple years of single 'A'. I still play now when I'm in school. I'm also a pretty big Leafs fan.</div>
+                    </div>
+                </div>
+                <div id="music" class="interest tile2">
+                    <img src="images/interests/music.jpg">
+                    <div class="mask"></div>
+                    <div class="mesh"></div>
+                    <div class="interesttext">
+                        <div class="interesttitle">Music</div>
+                        <div class="interestblurb generaltext">I love to listen and explore new music. I enjoy listening to anything, from Hip Hop to Rock, but my favourite genre by far is indie rock.</div>
+                    </div>
+                </div>
+                <div id="design" class="interest tile3">
+                    <img src="images/interests/design.jpg">
+                    <div class="mask"></div>
+                    <div class="mesh"></div>
+                    <div class="interesttext">
+                        <div class="interesttitle">Design</div>
+                        <div class="interestblurb generaltext">I'm not designer, but I do appreciate good design. Looking at beautiful UI and well designed products is one of my hobbies.</div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
         </div>
-
-        <div id="stjohns" class="job">
-            <a href="#">
-                <img class="icon" src="images/stjohnsLogo.png">
-            </a>
-            <h4 class="org">sunnybrook hospital, st john's rehab</h4>
-            <h5 class="jobTitle">MEAL TRAY DELIVERY VOLUNTEER</h5>
-            <h6 class="when">summer term 2014</h6>
+        <div id="contact">
+            <div class="cwidth">
+                <div class="sectionicon"><i class="fa fa-comments-o"></i></div>
+                <div class="sectiontitle">Contact</div>
+                <div class="sectiontext generaltext">You can reach me at andy.kwok@uwaterloo.ca</div>
+            </div>
         </div>
-        <div id="amos" class="job">
-            <a href="#">
-                <img class="icon" src="images/amosLogo.png">
-            </a>
-            <h4 class="org">AMOS Enterprises Limited</h4>
-            <h5 class="jobTitle">Engineering Intern</h5>
-            <h6 class="when">summer term 2014</h6>
-        </div>
-    </section>
+    </div><!--#page-->  
+    <div id="overlayclose" onclick="closemobilemenu();"></div>
+</div><!--#window.window-->
 
-    <section id="resume">
-        <img src="images/resume.png">
-        <h3>My Resume</h3>
-        <h5>Please take a look at my full resume</h5>
-        <a href="Resume.pdf" target="_blank">Download</a>
-        <h6>PDF</h6>
-    </section>
-
-    <section id="contact">
-        <img id="point" src="images/point.png">
-        <p>I'm currently in</p>
-        <h4>waterloo, ON</h4>
-        <div id="overflow">
-            <img id="email" src="images/mail.png">
-        </div> 
-        <h5>Send me an email at</h5>
-        <h3>andy.kwok@uwaterloo.ca</h3>
-    </section>
-
-    <script>
-        smoothScroll.init();
-    </script>
-
+<script src="scripts.js"></script>
 </body>
-
 </html>
