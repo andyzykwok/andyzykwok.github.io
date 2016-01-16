@@ -1,3 +1,6 @@
+alert(window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;);
 function gid(id){
     return document.getElementById(id);
 }
