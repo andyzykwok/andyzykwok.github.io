@@ -1,11 +1,9 @@
-alert(window.innerWidth
-|| document.documentElement.clientWidth
-|| document.body.clientWidth);
 function gid(id){
     return document.getElementById(id);
 }
 
 window.onload=function(){
+    alert(window.innerWidth || document.documentElement.clientWidth|| document.body.clientWidth);
     iconslide ();
 
     helloheight ();
