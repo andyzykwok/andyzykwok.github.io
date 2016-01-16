@@ -73,7 +73,7 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 
 
 #bgimg {
-	background: no-repeat center center; background-image: url(images2/please.png);
+	background: no-repeat center center; background-image: url(images/fade.png);
 	background-size: cover; width: 100%; 
 }
 
