@@ -3,8 +3,10 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 .clear {clear: both;}
 
 .generaltext {font-size: 16px; line-height: 1.5;font-family: 'Lato', sans-serif;}
-.generallink, .generallink:link, .generallink:active, .generallink:visited {color: #ffffff; text-decoration: none; border-bottom: 1px dotted #252B35; -webkit-transition: border 0.3s; transition: border 0.3s;} 
+.generallink, .generallink:link, .generallink:active, .generallink:visited {color: #ffffff; text-decoration: none; border-bottom: 1px dotted rgba(0,0,0,0); -webkit-transition: border 0.3s; transition: border 0.3s;} 
 .generallink:hover {border-bottom: 1px dotted #ffffff;}
+.generallinkdark, .generallinkdark:link, .generallinkdark:active, .generallinkdark:visited {color: #2a2b30; text-decoration: none; border-bottom: 1px dotted rgba(0,0,0,0); -webkit-transition: border 0.3s; transition: border 0.3s;} 
+.generallinkdark:hover {border-bottom: 1px dotted #2a2b30;}
 
 #window {background: #ffffff;width: 100%; position: relative; overflow: hidden;}
 .window {	
@@ -302,6 +304,8 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 	.sectiontext {width: 90%;}
 	.interest:hover .interesttext {top: 30%;}
 	.interestblurb {line-height: 1.4;}
+
+	#mobilemenu {font-size: 24px;}
 }
 
 @media screen and (max-width: 460px) {
@@ -311,6 +315,8 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 	.interest.tile0 {margin-top: 24px; margin-bottom: 12px;}
 	.interest.tile3 {margin-bottom: 24px; margin-top: 12px;}
 	.interest.tile1, .interest.tile2 {margin-top: 12px; margin-bottom: 12px;}
+
+	#mobilemenu {font-size: 20px;}
 }
 
 @media screen and (max-width: 420px){
@@ -320,6 +326,8 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 
 @media screen and (max-width: 400px){
 	.sectiontext {width: 100%;}
+
+	#mobilemenu {font-size: 18px;}
 }
 
 @media screen and (max-width: 380px){
@@ -330,4 +338,6 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 
 @media screen and (max-width: 360px) {
 	.interest:hover .interesttext {top: 55%;}
+
+	#mobilemenu {font-size: 16px;}
 }
