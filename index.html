@@ -13,6 +13,20 @@
 </head>
 
 <body>
+    <div id="loadingOverlay">
+        <div id="loadingOverlayContainer">
+            <div id="pulse"></div>
+            <img src="images/logo_dark.png">
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            //document.getElementById('loadingOverlay').style.opacity = '0';
+            setTimeout(function () {
+                //document.getElementById('loadingOverlay').style.display = 'none';
+            }, 1000);
+        });
+    </script>
     <div id="mobilemenu">
         <div class="valign">
             <div class="mobilelink" onclick="closemobilemenu('school');">School</div>
@@ -83,7 +97,20 @@
                 <div class="sectiontitle">Experiences</div>
                 <div class="sectiontext generaltext">Some of my co-op, work and volunteer experiences.</div>
 
-                <div id="latestexp">
+                <div id="zazzle">
+                    <div class="column">
+                        <h2 class="title"><a href="http://www.zazzle.com/about" target=_blank><img src="images/work/zazzle.png" style="width: 200px;"></a></h2>
+                        <div class="exp_info">
+                            Redwood City, Califonia<br>
+                            <span>May 2016 - August 2016</span>
+                        </div>
+                        <div class="generaltext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    </div>
+                    <img src="images/work/zazzle_page.png" style="display: block; float: left; width: 52%;"> 
+                    <div class="clear"></div>
+                </div>
+
+                <div id="hubnest">
                     <div id="siteslider">
                         <div id="slider" style="left: 0;" onmouseenter="clearInterval(document.slideinterval);" onmouseleave="autoslide();">
                             <a href="http://www.integrahealthcentre.com/" rel="nofollow" target=_blank><img border="0" src="images/slider/integra.jpg"></a>
@@ -96,8 +123,13 @@
                         <div class="slide right" onclick="slide(-1);"><i class="fa fa-caret-right"></i></div> 
                     </div>
                     <div class="column">
-                        <h2 class="title"><a href="http://www.hubnest.com" target=_blank><img style="width: 172px; display: block;" src="images/work/hubnest.png"></a></h2>
-                        <div class="generaltext">Hubnest is a company that provides creative web development services for their clients. I have spent 8 months (2 co-op terms) at Hubnest working as a developer, creating beautiful websites and web applications with PHP, HTML, CSS and JavaScript.<br><br>Below are some of the bigger projects I worked on while at Hubnest:</div>
+                        <h2 class="title"><a href="http://www.hubnest.com" target=_blank><img style="width: 172px;" src="images/work/hubnest.png"></a></h2>
+                        <div class="exp_info">
+                            Toronto, Ontario<br>
+                            <span>January 2015 - April 2015<br>
+                            September 2015 - December 2015</span>
+                        </div>
+                        <div class="generaltext">Hubnest is a company that provides creative web development services for their clients. I have spent 8 months (2 co-op terms) at Hubnest working as a developer, creating beautiful websites and web applications with PHP, HTML, CSS and JavaScript. Below are some of the bigger projects I worked on while at Hubnest:</div>
                         <div id="sitelinks">
                             <a href="http://www.integrahealthcentre.com/" target=_blank class="sitelink" onmousemove="slide(1);" style="background: #333333;" rel="nofollow">Integra Health Center</a>
                             <a href="http://can.womeninpayments.org/" target=_blank class="sitelink" onmousemove="slide(2);" rel="nofollow">Women in Payments</a>
@@ -267,7 +299,6 @@
     </div><!--#page-->  
     <div id="overlayclose" onclick="closemobilemenu();"></div>
 </div><!--#window.window-->
-
 <script src="scripts.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
