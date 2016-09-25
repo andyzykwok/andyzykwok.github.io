@@ -3,8 +3,9 @@ function gid(id){
 }
 
 window.onload=function(){
-    iconslide ();
+    loadingOverlay();
 
+    iconslide ();
     helloheight ();
     
     var numofslides = gid('slider').getElementsByTagName('a').length
@@ -23,6 +24,13 @@ window.onresize=function(){
 window.onscroll=function(){
     navbar ();
 } 
+
+function loadingOverlay () {
+    document.getElementById('loadingOverlay').style.opacity = '0';
+    setTimeout(function () {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }, 1000);
+}
 
 function iconslide () {
     icons = gid('iconslider').getElementsByTagName('i');
