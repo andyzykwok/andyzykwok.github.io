@@ -16,6 +16,40 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 	-ms-transition: transform 0.2s ease 0.27s, margin 0.3s, filter 0.5s;
 	transition: transform 0.2s ease 0.27s, margin 0.3s, filter 0.5s;
 }
+
+#loadingOverlay {
+	position: fixed; width: 100%; height: 100%; background: #252B35; top: 0; left: 0; z-index: 1000;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+	transition: opacity 1s;
+} 
+#loadingOverlayContainer {position: relative; width: 100%; height: 100%;}
+#loadingOverlay img {
+	position: absolute; top: 50%; left: 50%; width: 80px; margin-left: -40px; margin-top: -26px;
+}
+
+@-webkit-keyframes loadingBounce {0% {margin-top: -23px;} 50% {margin-top: -29px;} 100% {margin-top: -23px;}}
+@keyframes loadingBounce {0% {margin-top: -23px;} 50% {margin-top: -29px;} 100% {margin-top: -23px;}}
+
+#pulse {
+	width: 160px; height: 160px; position: absolute; background: #ffffff;
+	top: 50%; left: 50%; margin-left: -80px; margin-top: -80px; border-radius: 100%;
+  	-webkit-animation: pulse 1.2s infinite ease-in-out;
+  	animation: pulse 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+  0% { -webkit-transform: scale(0) }
+  100% { -webkit-transform: scale(1); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0); }
+  100% {  transform: scale(1); opacity: 0; }
+}
+
 .windowanimate {
 	-webkit-transform: scale(0.9);
 	-moz-transform: scale(0.9);
@@ -84,7 +118,7 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 .sectiontitle {padding: 20px 0 30px 0;font-size: 20px;margin: 0 auto; text-transform: uppercase; font-weight: bold;}
 .sectiontext {width: 50%; margin: 0 auto; padding-bottom: 50px;}
 
-.title {text-transform: uppercase; font-size: 40px; margin-bottom: 20px;}
+.title {text-transform: uppercase; font-size: 40px; margin-bottom: 12px;}
 
 #landing{width: 100%;text-align: center; position: relative;}
 .landingtext {
@@ -125,8 +159,13 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 #slider {position: relative; top: 0; transition: left ease 0.6s; -webkit-transition: left ease 0.6s;}
 #slider a {display: block; float: left;}
 #slider a img {width: 100%; display: block;}
-#latestexp {margin-bottom: 60px;}
-#latestexp .column {float: left; width: 37%; text-align: left; padding-top: 20px;}
+.column {float: left;}
+#hubnest, #zazzle {margin-bottom: 80px;}
+#hubnest .column {width: 37%; text-align: left; padding-top: 20px;}
+#zazzle .column {text-align: right; width: 45%; margin-right: 3%;}
+.column .generaltext {padding-top: 8px;}
+.exp_info {font-size: 12px; text-transform: uppercase; margin-bottom: 6px; line-height: 140%; color: #aaaaaa;} 
+.exp_info span {color: #5B616C;}
 .slide {position: absolute; top: 50%; left: 0; margin-top: -18px; font-size: 36px; color: #cccccc; -webkit-transition: color 0.4s; transition: color 0.4s; cursor: pointer;}
 .slide:hover {color: #353d4a;}
 .slide.right {right: 0; left: auto;}
@@ -261,7 +300,7 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 	.landingtext {font-size: 80px; width: 100%;}
 
 	#siteslider {margin-right: 0; width: 100%;}
-	#latestexp .column {width: 100%;}
+	#hubnest .column {width: 100%;}
 
 	#moretitle {display: none;} 
 	#mapwindow {position: absolute;}
