@@ -3,7 +3,9 @@ function gid(id){
 }
 
 window.onload=function(){
-    loadingOverlay();
+    setTimeout(function () {
+        loadingOverlay()
+    }, 1800);
 
     iconslide ();
     helloheight ();
