@@ -5,7 +5,7 @@ function gid(id){
 window.onload=function(){
     setTimeout(function () {
         loadingOverlay()
-    }, 1800);
+    }, 900);
 
     iconslide ();
     helloheight ();
@@ -29,9 +29,10 @@ window.onscroll=function(){
 
 function loadingOverlay () {
     document.getElementById('loadingOverlay').style.opacity = '0';
+    document.getElementById('loadingOverlayContainer').style.opacity = '0';
     setTimeout(function () {
         document.getElementById('loadingOverlay').style.display = 'none';
-    }, 1000);
+    }, 800);
 }
 
 function iconslide () {
