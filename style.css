@@ -165,7 +165,8 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 .column {float: left;}
 #hubnest, #zazzle {margin-bottom: 80px;}
 #hubnest .column {width: 37%; text-align: left; padding-top: 20px;}
-#zazzle .column {text-align: right; width: 45%; margin-right: 3%;}
+#zazzle .column {text-align: right; width: 45%; margin-right: 3%; float: right;}
+#zazzle_mockup {display: block; float: right; width: 52%;}
 .column .generaltext {padding-top: 8px;}
 .exp_info {font-size: 12px; text-transform: uppercase; margin-bottom: 6px; line-height: 140%; color: #aaaaaa;} 
 .exp_info span {color: #5B616C;}
@@ -320,6 +321,8 @@ body {background: #2a2b30; color: #2a2b30; font-family: 'Montserrat', sans-serif
 
 @media screen and (max-width: 690px){
 	.exppic, .exppichover {height: 100px;}
+	#zazzle .column {width: 100%; margin-right: 0; text-align: left;}
+	#zazzle_mockup {width: 100%;}
 }
 
 @media screen and (max-width: 600px){
