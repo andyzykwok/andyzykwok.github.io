@@ -245,6 +245,10 @@
       currentScore = [[],[],[],[]];
 
       getNames();
+
+      window.onbeforeunload = function() {
+        return true;
+      };
     </script>
   </body>
 </html>
