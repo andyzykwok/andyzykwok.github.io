@@ -1,254 +1,269 @@
 <!DOCTYPE html>
 <html>
-  <!--
+<!--
     Super simple and quickly built mahjong score calculator.
     Created for my family with the rules we play.
   -->
-  <head>
-    <title>Mahjong Score Calculator</title>
-    <style>
-      td, th {
-        padding: 6px;
-      }
 
-      tfoot td{
-        font-weight: bold;
-        border-top: 1px solid #000000;
-      }
+<head>
+  <title>Mahjong Score Calculator</title>
+  <style>
+    td,
+    th {
+      padding: 6px;
+    }
 
-    </style>
-  </head>
-  <body>
-    <h1>Mahjong Score Calculator</h1>
-    <table>
-      <thead>
-        <tr id="scoreBoardHeaderRow">
-        </tr>
-      </thead>
-      <tbody id="scoreBoard">
-        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-      <tbody/>
-      <tfoot id="scoreBoardTotals">
-        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-      </tfoot>
-    </table>
-    <hr style="margin: 12px 0;">
-    <div>
-      <form>
-        <div>
-          <label for="winner">Winner: </label>
-          <select id="winner">
-          </select>
-          <label for="loser" style="margin-left: 10px;">Loser: </label>
-          <select id="loser" onChange="toggleTwelveTileLoser()">
-            <option value="-1">Self Draw</option>
-          </select>
+    tfoot td {
+      font-weight: bold;
+      border-top: 1px solid #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Mahjong Score Calculator</h1>
+  <table>
+    <thead>
+      <tr id="scoreBoardHeaderRow">
+      </tr>
+    </thead>
+    <tbody id="scoreBoard">
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tbody />
+    <tfoot id="scoreBoardTotals">
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </tfoot>
+  </table>
+  <hr style="margin: 12px 0;">
+  <div>
+    <form>
+      <div>
+        <div style="margin-bottom: 12px;">
+          <label>Win Type:</label><br>
+          <input type="radio" name="winType" id="regularWin" onClick="toggleTwelveTileLoser()" checked>&nbsp;<label
+            for="regularWin">Regular</label>&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="winType" id="nineTileWin" onClick="toggleTwelveTileLoser()">&nbsp;<label
+            for="nineTileWin">9 Tile Showing Win</label>&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="winType" id="twelveTileWin" onClick="toggleTwelveTileLoser()">&nbsp;<label
+            for="twelveTileWin">12 Tile Showing Win</label>
         </div>
-        <div style="margin: 10px 0;">
-          <label for="points">Faan: </label>
-          <input type="number" id="points" min="2" max="10" value="2">
-        </div>
-        <label>Win Type:</label><br>
-        <input type="radio" name="winType" id="regularWin" onClick="toggleTwelveTileLoser()" checked>&nbsp;<label for="regularWin">Regular</label>&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="winType" id="nineTileWin" onClick="toggleTwelveTileLoser()">&nbsp;<label for="nineTileWin">9 Tile Showing Win</label>&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="winType" id="twelveTileWin" onClick="toggleTwelveTileLoser()">&nbsp;<label for="twelveTileWin">12 Tile Showing Win</label>&nbsp;&nbsp;&nbsp;
-        <br>
+        <label for="winner">Winner: </label>
+        <select id="winner">
+        </select>
+        <label for="loser" style="margin-left: 10px;">Loser: </label>
+        <select id="loser" onClick="toggleTwelveTileLoser()">
+          <option value="-1">Self Draw</option>
+        </select>
         <label id="twelveTileLoserLabel" for="twelveTileLoser" style="display: none;">Twelve Tile Loser:</label>
         <select id="twelveTileLoser" style="display: none;">
         </select>
-        <div style="margin-top: 10px;">
-          <input type="button" value="Add Round" onClick="addRound()">
-        </div>
-      </form>
-    </div>
-    <script>
-      function gid(id) {
-        return document.getElementById(id);
+      </div>
+      <div style="margin: 10px 0;">
+        <label for="points">Faan: </label>
+        <input type="number" id="points" min="2" max="10" value="2">
+      </div>
+
+      <div style="margin-top: 10px;">
+        <input type="button" value="Add Round" onClick="addRound()">
+      </div>
+    </form>
+  </div>
+  <script>
+    function gid(id) {
+      return document.getElementById(id);
+    }
+
+    function getNames() {
+      for (var i = 0; i < 4; i++) {
+        getName(i);
+      }
+    }
+
+    function getName(playerNum) {
+      var name = prompt("Enter player " + (playerNum + 1) + " name:", "Andy");
+      if (name == null || name == "") {
+        getName(playerNum);
       }
 
-      function getNames() {
-        for(var i = 0; i < 4; i++) {
-          getName(i);
-        }
+      var option = document.createElement("OPTION");
+      option.setAttribute("value", playerNum);
+      var optionText = document.createTextNode(name);
+      option.appendChild(optionText);
+      gid("loser").appendChild(option);
+
+      option = document.createElement("OPTION");
+      option.setAttribute("value", playerNum);
+      optionText = document.createTextNode(name);
+      option.appendChild(optionText);
+      gid("winner").appendChild(option);
+
+      option = document.createElement("OPTION");
+      option.setAttribute("value", playerNum);
+      optionText = document.createTextNode(name);
+      option.appendChild(optionText);
+      gid("twelveTileLoser").appendChild(option);
+
+      var tableHeadCell = document.createElement("TH");
+      tableHeadCell.innerHTML = name;
+      gid("scoreBoardHeaderRow").appendChild(tableHeadCell);
+    }
+
+    function pointsToScore(points) {
+      switch (points) {
+        case 2:
+        case 3:
+        case 4:
+          return Math.pow(2, points + 1);
+        case 5:
+          return 48;
+        case 6:
+          return 64;
+        case 7:
+          return 96;
+        case 8:
+          return 128;
+        case 9:
+          return 192;
+        case 10:
+          return 256;
       }
+    }
 
-      function getName(playerNum) {
-        var name = prompt("Enter player " + (playerNum + 1) + " name:", "Andy");
-        if (name == null || name == "") {
-          getName(playerNum);
-        }
+    function refreshScoreBoard() {
+      var scoreBoard = gid("scoreBoard");
+      scoreBoard.innerHTML = "";
+      var scoreBoardTotals = gid("scoreBoardTotals")
+      scoreBoardTotals.innerHTML = "";
 
-        var option = document.createElement("OPTION");
-        option.setAttribute("value", playerNum);
-        var optionText = document.createTextNode(name);
-        option.appendChild(optionText);
-        gid("loser").appendChild(option);
-
-        option = document.createElement("OPTION");
-        option.setAttribute("value", playerNum);
-        optionText = document.createTextNode(name);
-        option.appendChild(optionText);
-        gid("winner").appendChild(option);
-
-        option = document.createElement("OPTION");
-        option.setAttribute("value", playerNum);
-        optionText = document.createTextNode(name);
-        option.appendChild(optionText);
-        gid("twelveTileLoser").appendChild(option);
-
-        var tableHeadCell = document.createElement("TH");
-        tableHeadCell.innerHTML = name;
-        gid("scoreBoardHeaderRow").appendChild(tableHeadCell);
-      }
-
-      function pointsToScore(points) {
-        switch(points) {
-          case 2:
-          case 3:
-          case 4:
-            return Math.pow(2, points + 1);
-          case 5:
-            return 48;
-          case 6:
-            return 64;
-          case 7:
-            return 96;
-          case 8:
-            return 128;
-          case 9:
-            return 192;
-          case 10:
-            return 256;
-        }
-      }
-
-      function refreshScoreBoard() {
-        var scoreBoard = gid("scoreBoard");
-        scoreBoard.innerHTML = "";
-        var scoreBoardTotals = gid("scoreBoardTotals")
-        scoreBoardTotals.innerHTML = "";
-
-        for (var i = 0; i < currentScore[0].length; i++) {
-          var tableRow = document.createElement("TR");
-          tableRow.innerHTML =
-            "<td>" + currentScore[0][i] + "</td>"
-            + "<td>" + currentScore[1][i] + "</td>"
-            + "<td>" + currentScore[2][i] + "</td>"
-            + "<td>" + currentScore[3][i] + "</td>"
-            + "<td><button onClick=\"deleteRound(" + i + ")\">delete</button></td>";
-
-          gid("scoreBoard").appendChild(tableRow);
-        }
-
+      for (var i = 0; i < currentScore[0].length; i++) {
         var tableRow = document.createElement("TR");
         tableRow.innerHTML =
-          "<td>" + currentScore[0].reduce((a, b) => a + b, 0) + "</td>"
-          + "<td>" + currentScore[1].reduce((a, b) => a + b, 0) + "</td>"
-          + "<td>" + currentScore[2].reduce((a, b) => a + b, 0) + "</td>"
-          + "<td>" + currentScore[3].reduce((a, b) => a + b, 0) + "</td>";
+          "<td>" + currentScore[0][i] + "</td>"
+          + "<td>" + currentScore[1][i] + "</td>"
+          + "<td>" + currentScore[2][i] + "</td>"
+          + "<td>" + currentScore[3][i] + "</td>"
+          + "<td><button onClick=\"deleteRound(" + i + ")\">delete</button></td>";
 
-        gid("scoreBoardTotals").appendChild(tableRow);
+        gid("scoreBoard").appendChild(tableRow);
       }
 
-      function toggleTwelveTileLoser() {
-        gid("twelveTileLoserLabel").style.display = "none";
-        gid("twelveTileLoser").style.display = "none";
+      var tableRow = document.createElement("TR");
+      tableRow.innerHTML =
+        "<td>" + currentScore[0].reduce((a, b) => a + b, 0) + "</td>"
+        + "<td>" + currentScore[1].reduce((a, b) => a + b, 0) + "</td>"
+        + "<td>" + currentScore[2].reduce((a, b) => a + b, 0) + "</td>"
+        + "<td>" + currentScore[3].reduce((a, b) => a + b, 0) + "</td>";
 
-        if (gid("loser").value == -1 && gid("twelveTileWin").checked) {
-          gid("twelveTileLoserLabel").style.display = "inline";
-          gid("twelveTileLoser").style.display = "inline";
-        }
+      gid("scoreBoardTotals").appendChild(tableRow);
+    }
+
+    function toggleTwelveTileLoser() {
+      gid("twelveTileLoserLabel").style.display = "none";
+      gid("twelveTileLoser").style.display = "none";
+
+      if (gid("twelveTileWin").checked && gid("loser").value === '-1') {
+        gid("twelveTileLoserLabel").style.display = "inline";
+        gid("twelveTileLoser").style.display = "inline";
+      }
+    }
+
+    function addRound() {
+      var winner = Number(gid("winner").value);
+      var loser = Number(gid("loser").value);
+      var points = Number(gid("points").value);
+
+      var nineTileWin = gid("nineTileWin").checked;
+      var twelveTileWin = gid("twelveTileWin").checked;
+
+      var twelveTileLoser = gid("twelveTileLoser").value;
+
+      if (winner == loser || (twelveTileWin && winner == twelveTileLoser)) {
+        alert("Winner and Loser can not be the same person.");
+        return;
       }
 
-      function addRound() {
-        var winner = Number(gid("winner").value);
-        var loser = Number(gid("loser").value);
-        var points = Number(gid("points").value);
+      var score = pointsToScore(points);
 
-        var nineTileWin = gid("nineTileWin").checked;
-        var twelveTileWin = gid("twelveTileWin").checked;
+      if (loser == -1) {
+        currentScore[winner].push(score * 3);
+      } else {
+        currentScore[winner].push(score * 2);
+      }
 
-        var twelveTileLoser = gid("twelveTileLoser").value;
-
-        if (winner == loser) {
-          alert("Winner and Loser can not be the same person.");
-          return;
-        }
-
-        var score = pointsToScore(points);
-
+      if (twelveTileWin) {
         if (loser == -1) {
-          currentScore[winner].push(score * 3);
+          currentScore[twelveTileLoser].push(-1 * score * 3);
+          for (var i = 0; i < 4; i++) {
+            if (i != winner && i != twelveTileLoser) {
+              currentScore[i].push(0);
+            }
+          }
         } else {
-          currentScore[winner].push(score * 2);
+          currentScore[loser].push(-1 * score * 2);
+          for (var i = 0; i < 4; i++) {
+            if (i != winner && i != loser) {
+              currentScore[i].push(0);
+            }
+          }
         }
-
-        if (twelveTileWin) {
-          if (loser == -1) {
-            if (winner == twelveTileLoser) {
-              alert("Winner and Loser can not be the same person.");
-              return;
+      } else {
+        if (loser == -1) {
+          for (var i = 0; i < 4; i++) {
+            if (i != winner) {
+              currentScore[i].push(-1 * score);
             }
-            currentScore[twelveTileLoser].push(-1 * score * 3);
-            for (var i = 0; i < 4; i++) {
-              if (i != winner && i != twelveTileLoser) {
-                currentScore[i].push(0);
-              }
-            }
-          } else {
+          }
+        } else {
+          if (nineTileWin) {
             currentScore[loser].push(-1 * score * 2);
             for (var i = 0; i < 4; i++) {
               if (i != winner && i != loser) {
                 currentScore[i].push(0);
               }
             }
-          }
-        } else {
-          if (loser == -1) {
-            for (var i = 0; i < 4; i++) {
-              if (i != winner) {
-                currentScore[i].push(-1 * score);
-              }
-            }
           } else {
-            if (nineTileWin) {
-              currentScore[loser].push(-1 * score * 2);
-              for (var i = 0; i < 4; i++) {
-                if (i != winner && i != loser) {
-                  currentScore[i].push(0);
-                }
-              }
-            } else {
-              currentScore[loser].push(-1 * score);
-              for (var i = 0; i < 4; i++) {
-                if (i != winner && i != loser) {
-                  currentScore[i].push(-1 * score / 2);
-                }
+            currentScore[loser].push(-1 * score);
+            for (var i = 0; i < 4; i++) {
+              if (i != winner && i != loser) {
+                currentScore[i].push(-1 * score / 2);
               }
             }
           }
         }
-
-        refreshScoreBoard();
       }
 
-      function deleteRound(round) {
-        if (confirm("Are you sure you want to delete this round?")) {
-          for (var i = 0; i < 4; i++) {
-            currentScore[i].splice(round, 1);
-          }
+      refreshScoreBoard();
+    }
+
+    function deleteRound(round) {
+      if (confirm("Are you sure you want to delete this round?")) {
+        for (var i = 0; i < 4; i++) {
+          currentScore[i].splice(round, 1);
         }
-
-        refreshScoreBoard();
       }
 
-      currentScore = [[],[],[],[]];
+      refreshScoreBoard();
+    }
 
-      getNames();
+    currentScore = [[], [], [], []];
 
-      window.onbeforeunload = function() {
-        return true;
-      };
-    </script>
-  </body>
+    getNames();
+    toggleTwelveTileLoser();
+
+
+    window.onbeforeunload = function () {
+      return true;
+    };
+  </script>
+</body>
 </html>
