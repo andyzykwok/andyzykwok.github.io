@@ -28,12 +28,6 @@
       </tr>
     </thead>
     <tbody id="scoreBoard">
-      <tr>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-      </tr>
       <tbody />
     <tfoot id="scoreBoardTotals">
       <tr>
@@ -50,21 +44,22 @@
       <div>
         <div style="margin-bottom: 12px;">
           <label>Win Type:</label><br>
-          <input type="radio" name="winType" id="regularWin" onClick="toggleTwelveTileLoser()" checked>&nbsp;<label
+          <input type="radio" name="winType" id="regularWin" onClick="onWinTypeClick()" checked>&nbsp;<label
             for="regularWin">Regular</label>&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="winType" id="nineTileWin" onClick="toggleTwelveTileLoser()">&nbsp;<label
-            for="nineTileWin">9 Tile Showing Win</label>&nbsp;&nbsp;&nbsp;
-          <input type="radio" name="winType" id="twelveTileWin" onClick="toggleTwelveTileLoser()">&nbsp;<label
-            for="twelveTileWin">12 Tile Showing Win</label>
+          <input type="radio" name="winType" id="nineTileWin" onClick="onWinTypeClick()">&nbsp;<label
+            for="nineTileWin">9 Tile Showing</label>&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="winType" id="twelveTileWin" onClick="onWinTypeClick()">&nbsp;<label
+            for="twelveTileWin">12 Tile Showing</label>
         </div>
         <label for="winner">Winner: </label>
         <select id="winner">
         </select>
         <label for="loser" style="margin-left: 10px;">Loser: </label>
-        <select id="loser" onClick="toggleTwelveTileLoser()">
-          <option value="-1">Self Draw</option>
+        <select id="loser" onClick="onWinTypeClick()">
+          <option value="-1" id="loserSelfDraw">Self Draw</option>
         </select>
-        <label id="twelveTileLoserLabel" for="twelveTileLoser" style="display: none; margin-left: 10px;">Twelve Tile Loser:</label>
+        <label id="twelveTileLoserLabel" for="twelveTileLoser" style="display: none; margin-left: 10px;">Twelve Tile
+          Loser:</label>
         <select id="twelveTileLoser" style="display: none;">
         </select>
       </div>
@@ -87,6 +82,10 @@
       for (var i = 0; i < 4; i++) {
         getName(i);
       }
+
+      var tableHeadCell = document.createElement("TH");
+      tableHeadCell.innerHTML = 'Comment';
+      gid("scoreBoardHeaderRow").appendChild(tableHeadCell);
     }
 
     function getName(playerNum) {
@@ -94,6 +93,8 @@
       if (name == null || name == "") {
         getName(playerNum);
       }
+
+      players.push(name);
 
       var option = document.createElement("OPTION");
       option.setAttribute("value", playerNum);
@@ -152,6 +153,7 @@
           + "<td>" + currentScore[1][i] + "</td>"
           + "<td>" + currentScore[2][i] + "</td>"
           + "<td>" + currentScore[3][i] + "</td>"
+          + "<td>" + comments[i] + "</td>"
           + "<td><button onClick=\"deleteRound(" + i + ")\">delete</button></td>";
 
         gid("scoreBoard").appendChild(tableRow);
@@ -167,13 +169,23 @@
       gid("scoreBoardTotals").appendChild(tableRow);
     }
 
-    function toggleTwelveTileLoser() {
+    function onWinTypeClick() {
+      var loser = Number(gid("loser").value);
+
       gid("twelveTileLoserLabel").style.display = "none";
       gid("twelveTileLoser").style.display = "none";
 
-      if (gid("twelveTileWin").checked && gid("loser").value === '-1') {
+      if (gid("twelveTileWin").checked && loser === -1) {
         gid("twelveTileLoserLabel").style.display = "inline";
         gid("twelveTileLoser").style.display = "inline";
+      }
+
+      gid("loserSelfDraw").removeAttribute("disabled");
+      if (gid("nineTileWin").checked) {
+        gid("loserSelfDraw").setAttribute("disabled", "disabled");
+        if (loser === -1) {
+          gid("loser").value = 0;
+        }
       }
     }
 
@@ -242,6 +254,9 @@
         }
       }
 
+      var winType = gid("regularWin").checked ? "Regular" : gid("nineTileWin").checked ? "9 Tile Showing" : "12 Tile Showing";
+      comments.push("W: " + players[winner] + ", L: " + (loser === -1 ? "Self Draw" : players[loser]) + ", Win: " + winType + (twelveTileWin ? " (Loser: " + players[twelveTileLoser] + ")" : "") + ", Faan: " + points);
+
       refreshScoreBoard();
     }
 
@@ -250,15 +265,18 @@
         for (var i = 0; i < 4; i++) {
           currentScore[i].splice(round, 1);
         }
+        delete comments[round];
       }
 
       refreshScoreBoard();
     }
 
+    players = [];
     currentScore = [[], [], [], []];
+    comments = [];
 
     getNames();
-    toggleTwelveTileLoser();
+    onWinTypeClick();
 
 
     window.onbeforeunload = function () {
